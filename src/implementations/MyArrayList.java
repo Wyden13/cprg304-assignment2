@@ -52,6 +52,7 @@ public class MyArrayList<E> implements ListADT<E> {
 	/**
 	 * Removes all elements and resets the list
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void clear() {
 		array =(E[]) new Object[INITIAL_CAPACITY];
@@ -119,6 +120,7 @@ public class MyArrayList<E> implements ListADT<E> {
 	 * Ensure the internal array has enough capacity
 	 * Multiply the size when capacity is reached
 	 */
+	 @SuppressWarnings("unchecked")
 	private void ensureCapacity() {
 		if(size == array.length ) {
 			E[] newArray = (E[]) new Object[array.length * MULTIPLIER];
@@ -269,6 +271,7 @@ public class MyArrayList<E> implements ListADT<E> {
 	 * @return array containing list elements
 	 * @throws NullPointerException if toHold is null
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public E[] toArray(E[] toHold) throws NullPointerException {
 		if(toHold == null) {

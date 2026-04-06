@@ -180,23 +180,25 @@ public class MyStack<E> implements StackADT<E> {
      */
     @Override
     public Iterator<E> iterator() {
-    	return new Iterator<E>() {
-          
-            private final E[] snapshot = (E[]) toArray(); 
-            private int pos = 0;
+        return new Iterator<E>() {
+
+            private int index = list.size() - 1; // start at TOP
 
             @Override
             public boolean hasNext() {
-                return pos < snapshot.length;
+                return index >= 0;
             }
 
             @Override
-            public E next() throws NoSuchElementException {
-                if (!hasNext()) throw new NoSuchElementException();
-                return snapshot[pos++];
+            public E next() {
+                if (!hasNext()) {
+                    throw new NoSuchElementException();
+                }
+                return list.get(index--);
             }
         };
     }
+
     
     /**
      * Compare this stack with another stack for equality
