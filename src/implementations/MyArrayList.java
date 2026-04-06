@@ -13,7 +13,7 @@ import utilities.ListADT;
  * - Dynamic resizing using a grow multiplier
  * - Indexed access to element
  * - Insertion, deletion, and replacement
- * - Interator support using a snapshot copy
+ * - Iterator support using a snapshot copy
  */
 // Add <E> in both sides of implements
 public class MyArrayList<E> implements ListADT<E> {
@@ -88,7 +88,7 @@ public class MyArrayList<E> implements ListADT<E> {
 	 * Shift elements to the right starting from a given index
 	 * Used during insertion
 	 * 
-	 * @param index starting position for shiftring
+	 * @param index starting position for shifting
 	 */
 	private void shiftToRight(int index) {
 		for(int i = size; i > index; i--) {
